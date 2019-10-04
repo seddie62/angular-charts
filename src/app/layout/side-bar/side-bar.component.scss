@@ -1,0 +1,23 @@
+.side-nav{
+  border-right: 1px solid #edeff4;
+}
+.side-title{
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #c0c7d0;
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+.el-menu-item {
+  .is-active{
+    background: transparent;
+    border-left: 3px solid #fcbc0d;
+    color: #fcbc0d;
+    background-image: linear-gradient(to right, rgba(252, 188, 13, 0.2) , #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff,  #ffffff,  #ffffff, #ffffff, #ffffff);
+
+    &::after{
+      border-right: 1px solid #edeff4
+    }
+  }
+}
