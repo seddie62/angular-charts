@@ -1,5 +1,12 @@
-<div class="bg-black h-100">
-  <div class="flex justify-content-end w-100 h-100 align-items-center">
-      <div class="avatar" style="color: #f56a00; backgroundColor: #fde3cf">G</div>
+<div class="bg-black h-100 flex justify-content-end w-100 h-100 align-items-center position-relative">
+  <div class="show-on-little-screens header-menu">
+    <el-menu [model]="0" (modelChange)="handle($event)" class="el-menu-demo" mode="horizontal"
+      background-color="#262F37"
+      active-text-color="#ffd04b"
+      text-color="#fff">
+      <el-menu-item to="/dashboard" index="1">Dashboard</el-menu-item>
+      <el-menu-item to="/charts" index="3">Charts</el-menu-item>
+    </el-menu>
   </div>
+  <div class="avatar" style="color: #f56a00; background-color: #fde3cf">G</div>
 </div>

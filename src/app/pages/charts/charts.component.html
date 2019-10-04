@@ -1,15 +1,16 @@
 
 <div [el-loading]="loading">
-  <p>charts works!</p>
+  <p>CHARTS</p>
 
+  <div *ngIf="chartData">
+    <div class="my-2">
+      <app-temperature-graph [chartData]="chartData"></app-temperature-graph>
+    </div>
+    <div class="my-2">
+      <app-humidity-graph [chartData]="chartData"></app-humidity-graph>
+    </div>
+    <div class="my-2">
+      <app-pressure-graph [chartData]="chartData"></app-pressure-graph>
+    </div>
+  </div>
 </div>
-
-
-<el-card class="box-card">
-  <highcharts-chart
-    [Highcharts]="Highcharts"
-    [options]="chartOptions"
-
-    style="width: 100%; height: 400px; display: block;"
-  ></highcharts-chart>
-</el-card>

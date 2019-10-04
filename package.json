@@ -19,10 +19,12 @@
     "@angular/platform-browser": "~8.2.8",
     "@angular/platform-browser-dynamic": "~8.2.8",
     "@angular/router": "~8.2.8",
+    "date-fns": "^2.4.1",
     "element-angular": "^0.7.6",
     "highcharts": "^7.2.0",
     "highcharts-angular": "^2.4.0",
     "rxjs": "~6.4.0",
+    "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

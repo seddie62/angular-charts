@@ -1,13 +1,7 @@
 .side-nav{
   border-right: 1px solid #edeff4;
 }
-.side-title{
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #c0c7d0;
-  padding: 24px;
-  padding-bottom: 0;
-}
+
 
 .el-menu-item {
   .is-active{
@@ -18,6 +12,16 @@
 
     &::after{
       border-right: 1px solid #edeff4
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .side-nav {
+    width: 100%;
+
+    span{
+      display: none;
     }
   }
 }
