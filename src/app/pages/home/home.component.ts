@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartsService } from '../../services/charts.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = "Welcome to Trevor's predictive application";
   subtitle = "Where predictions are made on the fly";
+  weather:any;
+  loading:Boolean = false;
+  city: string;
+  country: string;
 
-  constructor() { }
+  constructor(private chartService: ChartsService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  // methods
+  getWeather() {
+   this.loading = true
+   this.chartService.getWeather(this.city, this.country).subscribe(
+      data => {
+        this.weather = data;
+      },
+      err => console.error(err),
+      () => {
+        this.loading = false
+      }
+    );
   }
 
 }

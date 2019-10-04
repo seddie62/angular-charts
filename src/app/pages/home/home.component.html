@@ -1,4 +1,30 @@
-<div class="v-center h-100">
+<div class="flex flex-column align-items-center h-100">
   <h2>{{ title }}</h2>
   <p>{{ subtitle }}</p>
+  <div [el-loading]="loading">
+    <div class="flex">
+      <el-input class="mr-2" [(ngModel)]="city" placeholder="City"></el-input>
+      <el-input class="mr-2" [(ngModel)]="country" placeholder="Country"></el-input>
+      <el-button (click)="getWeather()" type="primary">Get Weather</el-button>
+    </div>
+
+    <div *ngIf="weather">
+      <div class="flex align-items-center">
+        <p class="title">Location: </p>
+        <p>{{ weather.name }}</p>
+      </div>
+      <div class="flex align-items-center">
+        <p class="title">Temperature: </p>
+        <p>{{ weather.main.temp }}C</p>
+      </div>
+      <div class="flex align-items-center">
+        <p class="title">Humidity: </p>
+        <p>{{ weather.main.humidity }}</p>
+      </div>
+      <div class="flex align-items-center">
+        <p class="title">Conditions: </p>
+        <p>{{ weather.weather[0].description }}</p>
+      </div>
+    </div>
+  </div>
 </div>

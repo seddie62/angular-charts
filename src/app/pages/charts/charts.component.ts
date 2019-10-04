@@ -28,7 +28,6 @@ export class ChartsComponent implements OnInit {
     }]
   };
 
-
   chartData:any;
   loading:Boolean = false;
   startDate= Date.UTC(2019, 10, 10);
@@ -39,7 +38,6 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit() {
     this.getChartData();
-    // Highcharts.chart('container', this.options);
   }
 
   // methods
@@ -48,30 +46,16 @@ export class ChartsComponent implements OnInit {
    this.chartService.getChartData().subscribe(
       data => {
         this.chartData = data;
-        console.log('chart',data);
-
         this.setChartOptions(data)
       },
       err => console.error(err),
       () => {
         this.loading = false
-        console.log('done loading chartData')
       }
     );
   }
 
   setChartOptions(data) {
-    console.log('data', data);
-    console.log('point', this.startDate);
-
-    console.log('map', data.list.map(el => {
-      var newSet = {
-        x: el.dt_txt,
-        y: el.main.temp
-      }
-      return [el.dt_txt, el.main.temp]
-    }));
-
     this.chartOptions = {
       xAxis: {
         type: 'datetime',
@@ -104,9 +88,5 @@ export class ChartsComponent implements OnInit {
         pointInterval: 3 * 24 * 3600 * 1000
       }],
     };
-  }
-
-  setStartDate() {
-    // return new Date(Date.UTC())
   }
 }

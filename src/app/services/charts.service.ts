@@ -13,7 +13,11 @@ export class ChartsService {
   constructor(private http:HttpClient) {}
 
   // Uses http.get() to load data from a single API endpoint
-  getChartData() {
-    return this.http.get(`${this.APIEndpoint}/data/2.5/forecast?id=524901&APPID=${this.APIKey}&lat=35&lon=139`);
+  getChartData(lat=35, long=139) {
+    return this.http.get(`${this.APIEndpoint}/data/2.5/forecast?id=524901&APPID=${this.APIKey}&lat=${lat}&lon=${long}`);
+  }
+
+  getWeather(city = 'Tema', country = 'Ghana') {
+    return this.http.get(`${this.APIEndpoint}/data/2.5/weather?q=${city},${country}&APPID=${this.APIKey}&units=metric`);
   }
 }
